@@ -1,4 +1,4 @@
-package tv.codely.java_bootstrap;
+package io.github.franmosteiro.fizzbuzz;
 
 public class Greeter {
 
