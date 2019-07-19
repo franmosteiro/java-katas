@@ -12,15 +12,15 @@ public class FizzBuzzTestSuite {
     }
 
     @Test
-    public void second_number_should_print_2() {
-        FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("2", classUnderTest.printData().get(2));
-    }
-
-    @Test
     public void third_number_should_print_Fizz() {
         FizzBuzz classUnderTest = new FizzBuzz();
         assertEquals("Fizz", classUnderTest.printData().get(3));
+    }
+
+    @Test
+    public void fifth_number_should_print_Buzz() {
+        FizzBuzz classUnderTest = new FizzBuzz();
+        assertEquals("Buzz", classUnderTest.printData().get(5));
     }
 
 }
