@@ -11,7 +11,7 @@ public class FizzBuzz {
         for (int i = 0; i < 100; i++) {
             if (i % 3 == 0){
                 result.add("Fizz");
-            } else if (i == 5){
+            } else if (i % 5 == 0){
                 result.add("Buzz");
             } else {
                 result.add(Integer.toString(i));
