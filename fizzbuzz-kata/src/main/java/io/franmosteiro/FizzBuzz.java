@@ -9,7 +9,7 @@ public class FizzBuzz {
         ArrayList<String> result = new ArrayList<String>(100);
 
         for (int i = 0; i < 100; i++) {
-            if (i == 3){
+            if (i % 3 == 0){
                 result.add("Fizz");
             } else if (i == 5){
                 result.add("Buzz");

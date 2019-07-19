@@ -23,4 +23,10 @@ public class FizzBuzzTestSuite {
         assertEquals("Buzz", classUnderTest.printData().get(5));
     }
 
+    @Test
+    public void any_multiple_of_three_should_print_Fizz() {
+        FizzBuzz classUnderTest = new FizzBuzz();
+        assertEquals("Fizz", classUnderTest.printData().get(6));
+    }
+
 }
