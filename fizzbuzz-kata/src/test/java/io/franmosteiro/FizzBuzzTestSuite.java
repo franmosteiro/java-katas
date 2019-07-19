@@ -8,37 +8,37 @@ public class FizzBuzzTestSuite {
     @Test
     public void first_number_should_print_1() {
         FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("1", classUnderTest.printData().get(1));
+        assertEquals("1", classUnderTest.getData().get(1));
     }
 
     @Test
     public void third_number_should_print_Fizz() {
         FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("Fizz", classUnderTest.printData().get(3));
+        assertEquals("Fizz", classUnderTest.getData().get(3));
     }
 
     @Test
     public void fifth_number_should_print_Buzz() {
         FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("Buzz", classUnderTest.printData().get(5));
+        assertEquals("Buzz", classUnderTest.getData().get(5));
     }
 
     @Test
     public void any_multiple_of_three_should_print_Fizz() {
         FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("Fizz", classUnderTest.printData().get(6));
+        assertEquals("Fizz", classUnderTest.getData().get(6));
     }
 
     @Test
     public void any_multiple_of_five_should_print_Buzz() {
         FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("Buzz", classUnderTest.printData().get(25));
+        assertEquals("Buzz", classUnderTest.getData().get(25));
     }
 
     @Test
     public void any_multiple_of_three_and_five_should_print_FizzBuzz() {
         FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("FizzBuzz", classUnderTest.printData().get(15));
+        assertEquals("FizzBuzz", classUnderTest.getData().get(45));
     }
 
 }

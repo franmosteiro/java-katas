@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class FizzBuzz {
 
-    public ArrayList<String> printData() {
+    public ArrayList<String> getData() {
 
         ArrayList<String> result = new ArrayList<String>(100);
 
@@ -20,5 +20,12 @@ public class FizzBuzz {
             }
         }
         return result;
+    }
+
+    public static void main(String[] args){
+        FizzBuzz sut = new FizzBuzz();
+        for (String line : sut.getData()) {
+            System.out.println(line);
+        }
     }
 }
