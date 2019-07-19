@@ -17,4 +17,10 @@ public class FizzBuzzTestSuite {
         assertEquals("2", classUnderTest.printData().get(2));
     }
 
+    @Test
+    public void third_number_should_print_Fizz() {
+        FizzBuzz classUnderTest = new FizzBuzz();
+        assertEquals("Fizz", classUnderTest.printData().get(3));
+    }
+
 }
