@@ -1,12 +1,16 @@
 package io.franmosteiro;
 
+import java.util.ArrayList;
+
 public class FizzBuzz {
 
-    public String print(int number) {
-        if (number == 1) {
-            return "1";
-        } else {
-            return "2";
+    public ArrayList<String> printData() {
+
+        ArrayList<String> result = new ArrayList<String>(100);
+
+        for (int i = 0; i < 100; i++) {
+            result.add(Integer.toString(i));
         }
+        return result;
     }
 }
