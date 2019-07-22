@@ -8,15 +8,15 @@ public class FizzBuzz {
 
         ArrayList<String> result = new ArrayList<String>(100);
 
-        for (int i = 0; i < 100; i++) {
-            if (i % 3 == 0 && i % 5 == 0){
+        for (int number = 0; number <= 100; number++) {
+            if (number % 3 == 0 && number % 5 == 0){
                 result.add("FizzBuzz");
-            } else if (i % 3 == 0){
+            } else if (number % 3 == 0){
                 result.add("Fizz");
-            } else if (i % 5 == 0) {
+            } else if (number % 5 == 0) {
                 result.add("Buzz");
             } else {
-                result.add(Integer.toString(i));
+                result.add(Integer.toString(number));
             }
         }
         return result;
