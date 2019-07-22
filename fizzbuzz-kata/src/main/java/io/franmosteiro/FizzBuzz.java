@@ -9,11 +9,11 @@ public class FizzBuzz {
         ArrayList<String> result = new ArrayList<String>(100);
 
         for (int number = 0; number <= 100; number++) {
-            if (number % 3 == 0 && number % 5 == 0){
+            if (isFizzBuzz(number)){
                 result.add("FizzBuzz");
-            } else if (number % 3 == 0){
+            } else if (isFizz(number)){
                 result.add("Fizz");
-            } else if (number % 5 == 0) {
+            } else if (isBuzz(number)) {
                 result.add("Buzz");
             } else {
                 result.add(Integer.toString(number));
@@ -21,6 +21,19 @@ public class FizzBuzz {
         }
         return result;
     }
+
+    public boolean isFizz(int numberToBeChecked) {
+        return numberToBeChecked % 3 == 0;
+    }
+
+    public boolean isBuzz(int numberToBeChecked) {
+        return numberToBeChecked % 5 == 0;
+    }
+
+    public boolean isFizzBuzz(int numberToBeChecked) {
+        return isFizz(numberToBeChecked) && isBuzz(numberToBeChecked);
+    }
+
 
     public static void main(String[] args){
         FizzBuzz sut = new FizzBuzz();
