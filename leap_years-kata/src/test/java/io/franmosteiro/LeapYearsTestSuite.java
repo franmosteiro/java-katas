@@ -8,8 +8,10 @@ public class LeapYearsTestSuite {
     @Test
     public void year_divisible_by_400_should_be_leap() {
         LeapYears sut = new LeapYears();
+        assertTrue(sut.isLeap(400));
         assertTrue(sut.isLeap(2000));
-
+        assertTrue(sut.isLeap(1200));
+        assertTrue(sut.isLeap(3600));
     }
 
     @Test
@@ -20,6 +22,8 @@ public class LeapYearsTestSuite {
         assertFalse(sut.isLeap(1800));
         assertFalse(sut.isLeap(1900));
         assertFalse(sut.isLeap(2100));
+        assertFalse(sut.isLeap(1000));
+        assertFalse(sut.isLeap(404));
     }
 
     @Test
