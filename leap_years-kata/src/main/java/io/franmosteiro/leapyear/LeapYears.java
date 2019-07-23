@@ -1,4 +1,4 @@
-package io.franmosteiro;
+package io.franmosteiro.leapyear;
 
 public class LeapYears {
 

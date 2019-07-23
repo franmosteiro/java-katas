@@ -1,4 +1,4 @@
-package io.franmosteiro;
+package io.franmosteiro.leapyear;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
