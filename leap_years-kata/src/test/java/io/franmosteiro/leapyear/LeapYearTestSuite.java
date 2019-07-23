@@ -23,7 +23,6 @@ public class LeapYearTestSuite {
         assertFalse(sut.isLeap(1900));
         assertFalse(sut.isLeap(2100));
         assertFalse(sut.isLeap(1000));
-        assertFalse(sut.isLeap(404));
     }
 
     @Test
@@ -32,6 +31,7 @@ public class LeapYearTestSuite {
         assertTrue(sut.isLeap(2008));
         assertTrue(sut.isLeap(2012));
         assertTrue(sut.isLeap(2016));
+        assertTrue(sut.isLeap(404));
     }
 
     @Test
