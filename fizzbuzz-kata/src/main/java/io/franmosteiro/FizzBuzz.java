@@ -1,44 +1,38 @@
 package io.franmosteiro;
 
-import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class FizzBuzz {
 
-    public ArrayList<String> getData() {
+    public static String translate(int number) {
 
-        ArrayList<String> result = new ArrayList<String>(100);
+        String result;
 
-        for (int number = 0; number <= 100; number++) {
-            if (isFizzBuzz(number)){
-                result.add("FizzBuzz");
-            } else if (isFizz(number)){
-                result.add("Fizz");
-            } else if (isBuzz(number)) {
-                result.add("Buzz");
-            } else {
-                result.add(Integer.toString(number));
-            }
+        if (isFizzBuzz(number)){
+            result = "FizzBuzz";
+        } else if (isFizz(number)){
+            result = "Fizz";
+        } else if (isBuzz(number)) {
+            result = "Buzz";
+        } else {
+            result = Integer.toString(number);
         }
         return result;
     }
 
-    public boolean isFizz(int numberToBeChecked) {
+    public static boolean isFizz(int numberToBeChecked) {
         return numberToBeChecked % 3 == 0;
     }
 
-    public boolean isBuzz(int numberToBeChecked) {
+    public static boolean isBuzz(int numberToBeChecked) {
         return numberToBeChecked % 5 == 0;
     }
 
-    public boolean isFizzBuzz(int numberToBeChecked) {
+    public static boolean isFizzBuzz(int numberToBeChecked) {
         return isFizz(numberToBeChecked) && isBuzz(numberToBeChecked);
     }
 
-
     public static void main(String[] args){
-        FizzBuzz sut = new FizzBuzz();
-        for (String line : sut.getData()) {
-            System.out.println(line);
-        }
+        IntStream.rangeClosed(1, 101).forEach(number -> Printer.print(FizzBuzz.translate(number)));
     }
 }

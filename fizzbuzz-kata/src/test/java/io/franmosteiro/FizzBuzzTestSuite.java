@@ -6,39 +6,31 @@ import static org.junit.Assert.*;
 public class FizzBuzzTestSuite {
 
     @Test
-    public void first_number_should_print_1() {
-        FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("1", classUnderTest.getData().get(1));
+    public void should_return_number() {
+        assertEquals("1", FizzBuzz.translate(1));
+        assertEquals("26", FizzBuzz.translate(26));
+        assertEquals("151", FizzBuzz.translate(151));
     }
 
     @Test
-    public void third_number_should_print_Fizz() {
-        FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("Fizz", classUnderTest.getData().get(3));
+    public void should_return_Fizz() {
+        assertEquals("Fizz", FizzBuzz.translate(3));
+        assertEquals("Fizz", FizzBuzz.translate(6));
+        assertEquals("Fizz", FizzBuzz.translate(12));
     }
 
     @Test
-    public void fifth_number_should_print_Buzz() {
-        FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("Buzz", classUnderTest.getData().get(5));
+    public void should_return_buzz() {
+        assertEquals("Buzz", FizzBuzz.translate(5));
+        assertEquals("Buzz", FizzBuzz.translate(25));
+        assertEquals("Buzz", FizzBuzz.translate(55));
     }
 
     @Test
-    public void any_multiple_of_three_should_print_Fizz() {
-        FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("Fizz", classUnderTest.getData().get(6));
-    }
-
-    @Test
-    public void any_multiple_of_five_should_print_Buzz() {
-        FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("Buzz", classUnderTest.getData().get(25));
-    }
-
-    @Test
-    public void any_multiple_of_three_and_five_should_print_FizzBuzz() {
-        FizzBuzz classUnderTest = new FizzBuzz();
-        assertEquals("FizzBuzz", classUnderTest.getData().get(45));
+    public void should_return_FizzBuzz() {
+        assertEquals("FizzBuzz", FizzBuzz.translate(15));
+        assertEquals("FizzBuzz", FizzBuzz.translate(45));
+        assertEquals("FizzBuzz", FizzBuzz.translate(90));
     }
 
 }
