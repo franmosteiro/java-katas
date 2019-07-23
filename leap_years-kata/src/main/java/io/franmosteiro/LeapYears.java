@@ -2,25 +2,27 @@ package io.franmosteiro;
 
 public class LeapYears {
 
-    public boolean isLeap(int year) throws Exception {
+    public boolean isLeap(int year) {
+
+        boolean isLeap = false;
 
         if (isDivisibleBy400(year)) {
-            return true;
+            isLeap = true;
         }
 
         if (isDivisibleBy100NotBy400(year)) {
-            return false;
+            isLeap = false;
         }
 
         if (isDivisibleBy4NotBy100(year)) {
-            return true;
+            isLeap = true;
         }
 
         if (isNotDivisibleBy4(year)) {
-            return false;
+            isLeap = false;
         }
 
-        throw new Exception();
+        return isLeap;
     }
 
     private boolean isDivisibleBy400(int year) {
