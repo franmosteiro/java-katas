@@ -1,6 +1,6 @@
 package io.franmosteiro.leapyear;
 
-public class LeapYears {
+public class LeapYear {
 
     public boolean isLeap(int year) {
 
