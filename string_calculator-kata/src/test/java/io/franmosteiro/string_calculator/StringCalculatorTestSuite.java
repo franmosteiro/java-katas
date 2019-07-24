@@ -11,4 +11,11 @@ public class StringCalculatorTestSuite {
         StringCalculator strCalc = new StringCalculator();
         assertEquals("0", strCalc.add(""));
     }
+
+    @Test
+    public void str_should_return_its_values_added() {
+        StringCalculator strCalc = new StringCalculator();
+        assertEquals("1", strCalc.add("0,1"));
+    }
+
 }
