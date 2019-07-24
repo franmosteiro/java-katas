@@ -6,8 +6,9 @@ import static org.junit.Assert.*;
 public class FibonacciTestSuite {
 
     @Test
-    public void should_be_truthy() {
-        assertTrue(false);
+    public void when_zero_sequence_returns_zero() {
+        Fibonacci fib = new Fibonacci();
+        assertEquals(0, fib.calculate(0));
     }
 
 }
