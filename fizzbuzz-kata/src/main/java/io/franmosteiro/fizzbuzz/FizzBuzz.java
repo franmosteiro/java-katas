@@ -1,4 +1,4 @@
-package io.franmosteiro;
+package io.franmosteiro.fizzbuzz;
 
 import java.util.stream.IntStream;
 

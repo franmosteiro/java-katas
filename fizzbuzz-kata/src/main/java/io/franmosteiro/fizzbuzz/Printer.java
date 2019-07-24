@@ -1,4 +1,4 @@
-package io.franmosteiro;
+package io.franmosteiro.fizzbuzz;
 
 public class Printer {
 
