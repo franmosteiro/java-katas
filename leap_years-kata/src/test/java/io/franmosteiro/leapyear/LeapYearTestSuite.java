@@ -12,11 +12,7 @@ public class LeapYearTestSuite {
         assertTrue(sut.isLeap(2000));
         assertTrue(sut.isLeap(1200));
         assertTrue(sut.isLeap(3600));
-    }
 
-    @Test
-    public void year_not_divisible_by_400_should_not_be_leap() {
-        LeapYear sut = new LeapYear();
         assertFalse(sut.isLeap(2005));
         assertFalse(sut.isLeap(1700));
         assertFalse(sut.isLeap(1800));
