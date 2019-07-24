@@ -3,12 +3,10 @@ package io.franmosteiro.fibonacci;
 public class Fibonacci {
 
     public int calculateNext(int sequence) {
-        if (sequence == 2) {
-            return calculateNext(0) + calculateNext(1);
-        } else if (sequence == 3) {
-            return calculateNext(1) + calculateNext(2);
-        } else {
+        if (sequence < 2) {
             return sequence;
+        } else {
+            return calculateNext(sequence - 1) + calculateNext(sequence - 2);
         }
     }
 }
