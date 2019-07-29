@@ -45,10 +45,8 @@ public class StringCalculatorTestSuite {
     }
 
     @Test
-    public void str_containing_4_numbers_or_more_should_fail() throws ExceededNumberOfParametersException {
-        assertThrows(ExceededNumberOfParametersException.class, () -> {
-            strCalc.add("1,2,3,4");
-        });
+    public void str_containing_4_numbers_or_more_should_fail() {
+        assertThrows(ExceededNumberOfParametersException.class, () -> strCalc.add("1,2,3,4"));
     }
 
 }
