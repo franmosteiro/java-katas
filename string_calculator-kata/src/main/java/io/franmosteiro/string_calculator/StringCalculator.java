@@ -1,11 +1,19 @@
 package io.franmosteiro.string_calculator;
 
-import java.math.BigDecimal;
-
 public class StringCalculator {
 
     public String add(String inputStr) {
+
         String[] hits = inputStr.split(",");
-        return "".equals(hits[0]) ? "0" : hits[0];
+        int result = 0;
+        if (!"".equals(inputStr)) {
+            if (hits.length > 0) {
+                for (int i = 0; i < hits.length; i++) {
+                    result += Integer.valueOf(hits[i]);
+                }
+            }
+
+        }
+        return String.valueOf(result);
     }
 }

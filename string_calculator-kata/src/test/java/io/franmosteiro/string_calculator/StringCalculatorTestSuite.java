@@ -28,7 +28,7 @@ public class StringCalculatorTestSuite {
     }
 
     @Test
-    public void str_containing_two_numbers_should_return_its_sum() {
+    public void str_containing_two_numbers_should_return_their_sum() {
         assertEquals("3", strCalc.add("1,2"));
         assertEquals("6", strCalc.add("2,4"));
         assertEquals("6", strCalc.add("5,1"));
