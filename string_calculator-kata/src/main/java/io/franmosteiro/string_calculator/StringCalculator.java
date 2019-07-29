@@ -1,33 +1,35 @@
 package io.franmosteiro.string_calculator;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class StringCalculator {
 
+    public static final String SEPARATOR = ",";
+
     public String add(String inputStr) throws ExceededNumberOfParametersException {
 
-        String[] hits = inputStr.split(",");
-        BigDecimal result = new BigDecimal(0);
+        String[] hits = inputStr.split(SEPARATOR);
 
-        if (this.checkNotEmpty(inputStr)) {
-            if (hits.length > 0 && hits.length <= 3) {
-                for (int i = 0; i < hits.length; i++) {
-                    if (this.checkNotEmpty(hits[i])) {
-                        result = this.sum(result, hits[i]);
-                    }
-                }
-            } else {
-                throw new ExceededNumberOfParametersException();
-            }
+        if (hits.length > 3) {
+            throw new ExceededNumberOfParametersException();
         }
-        return String.valueOf(result);
+
+        return Arrays.stream(hits)
+                .reduce("", (sum1, sum2) ->
+                        this.sum(sum1, sum2).toString()
+                );
     }
 
-    private BigDecimal sum(BigDecimal parcial, String addition) {
-        return parcial.add(new BigDecimal(addition));
+    private BigDecimal sum(String sum1, String sum2) {
+        return this.stringToNumber(sum1).add(this.stringToNumber(sum2));
     }
 
-    private boolean checkNotEmpty(String str) {
-        return !"".equals(str);
+    private boolean checkEmpty(String str) {
+        return "".equals(str);
+    }
+
+    private BigDecimal stringToNumber(String predicate){
+        return new BigDecimal(this.checkEmpty(predicate) ? "0" : predicate);
     }
 }
