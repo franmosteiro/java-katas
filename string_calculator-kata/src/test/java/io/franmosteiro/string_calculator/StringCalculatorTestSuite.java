@@ -28,11 +28,19 @@ public class StringCalculatorTestSuite {
     }
 
     @Test
-    public void str_containing_two_numbers_should_return_their_sum() {
+    public void str_containing_2_numbers_should_return_their_sum() {
         assertEquals("3", strCalc.add("1,2"));
         assertEquals("6", strCalc.add("2,4"));
         assertEquals("6", strCalc.add("5,1"));
         assertEquals("16", strCalc.add("15,1"));
+    }
+
+    @Test
+    public void str_containing_3_numbers_should_return_their_sum() {
+        assertEquals("6", strCalc.add("1,2,3"));
+        assertEquals("7", strCalc.add("2,4,1"));
+        assertEquals("6", strCalc.add("5,1,0"));
+        assertEquals("31", strCalc.add("15,1,15"));
     }
 
 }
