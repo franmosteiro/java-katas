@@ -34,6 +34,8 @@ public class StringCalculatorTestSuite {
         assertEquals("6", strCalc.add("2,4"));
         assertEquals("6", strCalc.add("5,1"));
         assertEquals("16", strCalc.add("15,1"));
+        assertEquals("4", strCalc.add("4,"));
+        assertEquals("2", strCalc.add(",2"));
     }
 
     @Test
@@ -42,11 +44,15 @@ public class StringCalculatorTestSuite {
         assertEquals("7", strCalc.add("2,4,1"));
         assertEquals("6", strCalc.add("5,1,0"));
         assertEquals("31", strCalc.add("15,1,15"));
+        assertEquals("1", strCalc.add(",1,0"));
+        assertEquals("78", strCalc.add("78,,0"));
     }
 
     @Test
     public void str_containing_4_numbers_or_more_should_fail() {
         assertThrows(ExceededNumberOfParametersException.class, () -> strCalc.add("1,2,3,4"));
+        assertThrows(ExceededNumberOfParametersException.class, () -> strCalc.add("1,2,3,4,9,8,7"));
+        assertThrows(ExceededNumberOfParametersException.class, () -> strCalc.add("1,2,3,4,,8,"));
     }
 
 }

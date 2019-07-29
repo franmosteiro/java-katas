@@ -6,17 +6,22 @@ public class StringCalculator {
 
         String[] hits = inputStr.split(",");
         int result = 0;
+
+        if (hits.length > 3) {
+            throw new ExceededNumberOfParametersException();
+        }
+
         if (!"".equals(inputStr)) {
-            if (hits.length > 3) {
-                throw new ExceededNumberOfParametersException();
-            }
             if (hits.length > 0) {
                 for (int i = 0; i < hits.length; i++) {
-                    result += Integer.valueOf(hits[i]);
+                    if (!"".equals(hits[i]))  {
+                        result += Integer.valueOf(hits[i]);
+                    }
                 }
             }
 
         }
+
         return String.valueOf(result);
     }
 }
