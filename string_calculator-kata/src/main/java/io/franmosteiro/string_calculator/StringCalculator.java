@@ -7,13 +7,9 @@ public class StringCalculator {
 
     public static final String SEPARATOR = ",";
 
-    public String add(String inputStr) throws ExceededNumberOfParametersException {
+    public String add(String inputStr) {
 
         String[] hits = inputStr.split(SEPARATOR);
-
-        if (hits.length > 3) {
-            throw new ExceededNumberOfParametersException();
-        }
 
         return Arrays.stream(hits)
                 .reduce("", (sum1, sum2) ->

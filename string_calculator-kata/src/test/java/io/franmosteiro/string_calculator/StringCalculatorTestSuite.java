@@ -18,12 +18,12 @@ public class StringCalculatorTestSuite {
     }
 
     @Test
-    public void empty_str_should_return_zero() throws ExceededNumberOfParametersException {
+    public void empty_str_should_return_zero() {
         assertEquals("0", strCalc.add(""));
     }
 
     @Test
-    public void str_containing_one_number_should_return_its_value() throws ExceededNumberOfParametersException {
+    public void str_containing_one_number_should_return_its_value() {
         assertEquals("1.1", strCalc.add("1.1"));
         assertEquals("1", strCalc.add("1"));
         assertEquals("2", strCalc.add("2"));
@@ -32,7 +32,7 @@ public class StringCalculatorTestSuite {
     }
 
     @Test
-    public void str_containing_2_numbers_should_return_their_sum() throws ExceededNumberOfParametersException {
+    public void str_containing_2_numbers_should_return_their_sum() {
         assertEquals("3", strCalc.add("1,2"));
         assertEquals("6", strCalc.add("2,4"));
         assertEquals("6", strCalc.add("5,1"));
@@ -44,7 +44,7 @@ public class StringCalculatorTestSuite {
     }
 
     @Test
-    public void str_containing_3_numbers_should_return_their_sum() throws ExceededNumberOfParametersException {
+    public void str_containing_3_numbers_should_return_their_sum() {
         assertEquals("6", strCalc.add("1,2,3"));
         assertEquals("7", strCalc.add("2,4,1"));
         assertEquals("6", strCalc.add("5,1,0"));
@@ -53,13 +53,6 @@ public class StringCalculatorTestSuite {
         assertEquals("78", strCalc.add("78,,0"));
         assertEquals("1.1", strCalc.add("0.4,0.4,0.3"));
         assertEquals("0.3", strCalc.add("0.3,,0"));
-    }
-
-    @Test
-    public void str_containing_4_numbers_or_more_should_fail() {
-        assertThrows(ExceededNumberOfParametersException.class, () -> strCalc.add("1,2,3,4"));
-        assertThrows(ExceededNumberOfParametersException.class, () -> strCalc.add("1,2,3,4,9,8,7"));
-        assertThrows(ExceededNumberOfParametersException.class, () -> strCalc.add("1,2,3,4,,8,"));
     }
 
 }
