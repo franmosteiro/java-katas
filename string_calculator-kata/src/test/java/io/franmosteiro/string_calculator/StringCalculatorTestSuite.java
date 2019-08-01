@@ -57,14 +57,9 @@ public class StringCalculatorTestSuite {
 
     @Test
     public void str_containing_newLine_asSeparator_should_return_sum_of_containing_numbers() {
-        assertEquals("8", strCalc.add("1,\n2,2,3"));
-        assertEquals("3.3", strCalc.add("1.1,\n2.2"));
-        assertEquals("5.3", strCalc.add("1.1,4.2,\n"));
-    }
-
-    @Test
-    public void str_containing_newLine_inAnIncorrectPosition_should_fail() {
-        assertEquals("8", strCalc.add("1,2,2,3\n"));
+        assertEquals("6", strCalc.add("1\\n2,3"));
+        assertEquals("3.3", strCalc.add("1.1\\n2.2"));
+        assertEquals("5.3", strCalc.add("1.1,4.2\\n"));
     }
 
 }

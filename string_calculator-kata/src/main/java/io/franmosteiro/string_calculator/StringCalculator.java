@@ -2,10 +2,11 @@ package io.franmosteiro.string_calculator;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.List;
 
 public class StringCalculator {
 
-    public static final String SEPARATOR = ",";
+    public static final String SEPARATOR = "[,|\\\\n]";
 
     public String add(String inputStr) {
 
