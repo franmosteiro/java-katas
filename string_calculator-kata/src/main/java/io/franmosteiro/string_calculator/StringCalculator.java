@@ -13,19 +13,15 @@ public class StringCalculator {
 
         return Arrays.stream(hits)
                 .reduce("", (sum1, sum2) ->
-                        this.sum(sum1, sum2).toString()
+                        this.sum(sum1, sum2)
                 );
     }
 
-    private BigDecimal sum(String sum1, String sum2) {
-        return this.stringToNumber(sum1).add(this.stringToNumber(sum2));
+    private String sum(String sum1, String sum2) {
+        return this.bigDecimalToString(sum1).add(this.bigDecimalToString(sum2)).toString();
     }
 
-    private boolean checkEmpty(String str) {
-        return "".equals(str);
-    }
-
-    private BigDecimal stringToNumber(String predicate){
-        return new BigDecimal(this.checkEmpty(predicate) ? "0" : predicate);
+    private BigDecimal bigDecimalToString(String predicate){
+        return new BigDecimal(predicate.isEmpty() ? "0" : predicate);
     }
 }
