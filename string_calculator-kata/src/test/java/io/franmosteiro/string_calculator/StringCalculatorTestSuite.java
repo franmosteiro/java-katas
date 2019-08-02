@@ -48,4 +48,9 @@ public class StringCalculatorTestSuite {
         assertEquals("Number expected but '\\n' found at position 6", new StringCalculator("175.2,\n35").add());
         assertEquals("Number expected but '\\n' found at position 8", new StringCalculator("1.2,3,2,\n1").add());
     }
+
+    @Test
+    public void str_cannot_end_in_a_delimiterl() {
+        assertEquals("\"1,3,\" is invalid and should return the message Number expected but EOF found", new StringCalculator("1,3,").add());
+    }
 }

@@ -26,6 +26,10 @@ public class StringCalculator {
             return "Number expected but '\\n' found at position " + this.inputData.lastIndexOf("\n");
         }
 
+        if (this.inputData.lastIndexOf(",") == this.inputData.length() - 1 || this.inputData.lastIndexOf("\n") == this.inputData.length() - 1) {
+            return '"' + this.inputData + '"' + " is invalid and should return the message Number expected but EOF found";
+        }
+
         return Arrays.asList(this.inputData.split(this.delimiter))
                     .stream()
                     .map(BigDecimal::new)
