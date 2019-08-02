@@ -45,7 +45,7 @@ public class StringCalculatorTestSuite {
 
     @Test
     public void str_containing_newLine_inAnIncorrectPosition_should_fail() {
-        assertThrows(NumberFormatException.class, () -> new StringCalculator("175.2,\n35").add());
-        assertThrows(NumberFormatException.class, () -> new StringCalculator("1.2,3,\n1").add());
+        assertEquals("Number expected but '\\n' found at position 6", new StringCalculator("175.2,\n35").add());
+        assertEquals("Number expected but '\\n' found at position 8", new StringCalculator("1.2,3,2,\n1").add());
     }
 }

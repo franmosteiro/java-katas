@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public class StringCalculator {
 
-    public static final String SEPARATORS_REGEXP = "[,|\\n]";
+    public static final String SEPARATORS_REGEXP = "[,|\n]";
 
     private String delimiter;
     private String inputData;
@@ -20,6 +20,10 @@ public class StringCalculator {
 
         if ("".equals(this.inputData)) {
             return "0";
+        }
+
+        if (this.inputData.contains(",\n")) {
+            return "Number expected but '\\n' found at position " + this.inputData.lastIndexOf("\n");
         }
 
         return Arrays.asList(this.inputData.split(this.delimiter))
