@@ -1,20 +1,22 @@
 package io.franmosteiro.string_calculator;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class StringCalculator {
 
     public static final String SEPARATORS_REGEXP = "[,|\\n]";
 
-    public Double add(String inputStr) {
+    public String add(String inputStr) {
 
         if ("".equals(inputStr)) {
-            return Double.valueOf(0);
+            return "0";
         }
 
         return Arrays.asList(inputStr.split(SEPARATORS_REGEXP))
                     .stream()
-                    .mapToDouble(Double::parseDouble).sum();
+                    .map(BigDecimal::new)
+                    .reduce(new BigDecimal(0), (sum1, sum2) -> sum1.add(sum2)).toString();
     }
     
 }
