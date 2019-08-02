@@ -9,7 +9,7 @@ public class StringCalculator {
     public Double add(String inputStr) {
 
         if ("".equals(inputStr)) {
-            return 0d;
+            return Double.valueOf(0);
         }
 
         return Arrays.asList(inputStr.split(SEPARATORS_REGEXP))
