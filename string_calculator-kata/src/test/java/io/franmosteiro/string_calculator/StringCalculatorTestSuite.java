@@ -1,61 +1,51 @@
 package io.franmosteiro.string_calculator;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.math.BigDecimal;
-
+import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringCalculatorTestSuite {
 
-    private StringCalculator strCalc;
-
-    @BeforeEach
-    public void setUp() {
-        strCalc = new StringCalculator();
-    }
-
     @Test
     public void empty_str_should_return_zero() {
-        assertEquals("0", strCalc.add(""));
+        assertEquals("0", new StringCalculator("0").add());
     }
 
     @Test
     public void str_containing_one_number_should_return_its_value() {
-        assertEquals("1.1", strCalc.add("1.1"));
-        assertEquals("1", strCalc.add("1"));
-        assertEquals("2", strCalc.add("2"));
-        assertEquals("5", strCalc.add("5"));
-        assertEquals("15", strCalc.add("15"));
+        assertEquals("1.1", new StringCalculator("1.1").add());
+        assertEquals("1", new StringCalculator("1").add());
+        assertEquals("2", new StringCalculator("2").add());
+        assertEquals("5", new StringCalculator("5").add());
+        assertEquals("15", new StringCalculator("15").add());
     }
 
     @Test
     public void str_containing_2_numbers_should_return_their_sum() {
-        assertEquals("3", strCalc.add("1,2"));
-        assertEquals("6", strCalc.add("2,4"));
-        assertEquals("6", strCalc.add("5,1"));
-        assertEquals("16", strCalc.add("15,1"));
+        assertEquals("3", new StringCalculator("1,2").add());
+        assertEquals("6", new StringCalculator("2,4").add());
+        assertEquals("6", new StringCalculator("5,1").add());
+        assertEquals("16", new StringCalculator("15,1").add());
     }
 
     @Test
     public void str_containing_3_numbers_should_return_their_sum() {
-        assertEquals("6", strCalc.add("1,2,3"));
-        assertEquals("7", strCalc.add("2,4,1"));
-        assertEquals("6", strCalc.add("5,1,0"));
-        assertEquals("31", strCalc.add("15,1,15"));
-        assertEquals("1.1", strCalc.add("0.4,0.4,0.3"));
+        assertEquals("6", new StringCalculator("1,2,3").add());
+        assertEquals("7", new StringCalculator("2,4,1").add());
+        assertEquals("6", new StringCalculator("5,1,0").add());
+        assertEquals("31", new StringCalculator("15,1,15").add());
+        assertEquals("1.1", new StringCalculator("0.4,0.4,0.3").add());
     }
 
     @Test
     public void str_containing_newLine_asSeparator_should_return_sum_of_containing_numbers() {
-        assertEquals("6", strCalc.add("1\n2,3"));
+        assertEquals("6", new StringCalculator("1\n2,3").add());
     }
 
     @Test
     public void str_containing_newLine_inAnIncorrectPosition_should_fail() {
-        assertThrows(NumberFormatException.class, () -> strCalc.add("175.2,\n35"));
-        assertThrows(NumberFormatException.class, () -> strCalc.add("1.2,3,\n1"));
+        assertThrows(NumberFormatException.class, () -> new StringCalculator("175.2,\n35").add());
+        assertThrows(NumberFormatException.class, () -> new StringCalculator("1.2,3,\n1").add());
     }
 }
