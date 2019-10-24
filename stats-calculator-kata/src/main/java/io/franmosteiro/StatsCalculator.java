@@ -2,10 +2,11 @@ package io.franmosteiro;
 
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
 import java.util.stream.Stream;
 
 public class StatsCalculator {
+
+    private StatsCalculator() {}
 
     public static int getMinimumValue(Integer[] stats) {
         return toStream(stats).min(Comparator.naturalOrder()).orElse(0);
