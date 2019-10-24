@@ -18,7 +18,7 @@ public class StringCalculator {
 
     public String add() {
 
-        if ("".equals(this.inputData)) {
+        if (this.inputData.isEmpty()) {
             return "0";
         }
 
